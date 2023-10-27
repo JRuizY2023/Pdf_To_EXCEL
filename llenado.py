@@ -39,8 +39,10 @@ def llenado_dp_p_atm(lista,sheet_xls,sh_xlsx):
 def llenado_presion(df,etiqueta,fil,sheet):
     for i in range(df.shape[0]):
         for j in range(df.shape[1]):
-            if j==0 or j==3:
-                j=0
+            if j==0:
                 llenado_excel_p(etiqueta[j],fil,i,j,sheet,df)
+            if j==3:
+                llenado_excel_p(etiqueta[j],fil,i,0,sheet,df)
             if j==1 or j==2:
                 llenado_excel(etiqueta[j],fil,i,j,sheet,df)
+
